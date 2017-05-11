@@ -1,0 +1,16 @@
+extends ../layout
+block content
+
+  h3 Navegador de proyectos
+  form(class="navbar-search pull-left")
+    input#proyecto-search(class="search-query" type="text" placeholder="Search for projects")
+
+  table#proyecto-table(class="table table-striped")
+    thead
+      tr
+        th Name
+        th
+    tbody
+      for proyecto in proyectos
+        tr
+          td: a(href="/proyectos/show/#{proyecto.id}") #{proyecto.id}

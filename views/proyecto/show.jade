@@ -1,0 +1,15 @@
+extends ../layout
+block content
+
+  h3 Mostrar detalles del proyecto
+
+  table#proyecto-table(class="table table-striped")
+    thead
+      tr
+        th  Hola
+        th
+        tbody
+          for detalle in detalles
+            tr
+              td: h3 #{detalle.key}
+              td: h3 #{detalle.value}
