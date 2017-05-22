@@ -11,7 +11,7 @@ exports.setup = function( config ) {
     var proyecto_by_type = {
         map : [ 'function(doc, meta) {',
                     'if (doc.type && doc.type == "plan_de_emergencia") { ',
-                        'emit(doc.name, null); }',
+                        'emit(doc.docId, null); }',
                 '}'
               ].join('\n')
     }
@@ -28,7 +28,7 @@ exports.setup = function( config ) {
         var bmanager = bsbucket.manager();
         // Update the beer view, to index beers `by_name`.
         bmanager.getDesignDocument( "proyecto", function( err, ddoc, meta ) {
-            if(! ('by_name' in ddoc['views']) ) {
+            if(! ('by_type' in ddoc['views']) ) {
                 ddoc.views.by_name = proyecto_by_type;
                 bmanager.upsertDesignDocument( "proyecto", ddoc, function( err, res ) {
                     if(err) {
@@ -59,7 +59,7 @@ exports.reset = function( config ) {
       console.log(err);
       console.log('get done');
 
-      delete ddoc['views']['by_name'];
+      delete ddoc['views']['by_type'];
       bmanager.upsertDesignDocument( "proyecto", ddoc, function( err, res ) {
         console.log('set done');
 

@@ -161,11 +161,14 @@ console.log("***********results*************");
         doc.id = req.params.proyecto_id;
         var view = {
           'proyecto': doc,
-          'proyectofields': _.map(doc, function(v,k){return {'key':k,'value':v};})
+          //'proyectofields': _.map(doc, function(v,k){return {'key':k,'value':v};})
+          'proyectofields': _.map(doc, function(v,k){return {k:v};})
         };
-        console.log("*************view********");
+        console.log("*************view proyecto********");
+        console.log(view.proyecto);
+        console.log("*************view proyectofields********");
         console.log(view.proyectofields);
-        res.render('proyecto/show', {'detalles':view.proyectofields});
+        res.render('proyecto/show', view.proyecto);
     }
   });
   }
