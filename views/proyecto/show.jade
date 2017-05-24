@@ -1,6 +1,31 @@
 extends ../layout
 block content
 
-  h3 Mostrar detalles del proyecto
 
-  h3  #{nombre_cliente}
+ h3.muted  CLIENTE
+  hr
+  h3 Nombre:      #{nombre_cliente}
+  h3 Apellidos:   #{apellidos_cliente}
+  // h3  CIF cliente:#{nombre_cliente}
+  hr
+
+  h2.muted FACTURACIÓN
+  hr
+  h3  ID:         #{id_factura}
+  h3  Pais:       #{pais_factura}
+  h3  Provincia:  #{provincia_factura}
+  h3  Municipio:  #{municipio_factura}
+  h3  Calle:      #{calle_factura}
+  h3  CP:         #{cp_factura}
+  hr
+
+  h2.muted FICHA
+  hr
+  h3  Localización:            #{localizacion_ficha}
+  h3  Número participantes:    #{numeroParticipantes_ficha}
+  if (presenciaMenores_ficha)
+    h3  Presencia de menores:    Si
+  else
+    h3  Presencia de menores:    No
+  h3  Tipo de evento:          #{tipoEvento_ficha}
+  h3  Horario:                 #{horario_ficha}
