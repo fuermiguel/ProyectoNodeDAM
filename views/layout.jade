@@ -1,36 +1,49 @@
-!!!5
-html(lang="en")
+doctype html
+//if lt IE 7
+  html.no-js.lt-ie9.lt-ie8.lt-ie7(lang='')  
+//if IE 7
+  html.no-js.lt-ie9.lt-ie8(lang='')  
+//if IE 8
+  html.no-js.lt-ie9(lang='')  
+// [if gt IE 8] <!
+html.no-js(lang='')
+  // <![endif]
   head
-    meta(charset="utf-8")
-    title App Gestión de Oficina Técnica
-    meta(name="viewport" content="width=device-width, initial-scale=1.0")
-    meta(name="description" content="The Couchbase NodeJS Beer-Sample App")
-    meta(name="author" content="Couchbase, Inc. 2013")
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+    title Gestión de proyectos
+    meta(name='description', content='')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+       
+    link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700')
+    link(rel='stylesheet', href='https://fonts.googleapis.com/icon?family=Material+Icons')  
+    link(rel='apple-touch-icon', href='apple-touch-icon.png')
+    link(rel='stylesheet', href='/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/css/bootstrap-theme.min.css')
+    link(rel='stylesheet', href='/css/style.css')
 
-    link(href="/css/bootstrap.min.css" rel="stylesheet")
-    link(href="/css/proyecto.css" rel="stylesheet")
-    link(href="/css/bootstrap-responsive.min.css" rel="stylesheet")
+    script(src='/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js')
+    script(src='/js/jquery.min.js')
+    script(src='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js')
 
-    //HTML5 shim, for IE6-8 support of HTML5 element
-    //if lt IE 9
-      script(src="http://html5shim.googlecode.com/svn/trunk/html5.js")
+    //script.
+      window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\\/script>')
 
+    script(src='/js/main.js')
+    script(src='/js/index.js')
   body
-    .container-narrow
-      .masthead
-        ul.nav.nav-pills.pull-right
-          li: a(href="/welcome") Home
-          li: a(href="/proyectos") Proyectos
-        h2.muted Gestión de Oficina Técnica
+    //if lt IE 8
+      p.browserupgrade
+        | You are using an 
+        strong outdated
+        |  browser. Please 
+        a(href='http://browsehappy.com/') upgrade your browser
+        |  to improve your experience.
+  
+    block content
+
       hr
-
-      .row-fluid
-        .span12
-          block content
-      hr
-
-      .footer
-        p &copy; Couchbase, Inc. 2017
-
-    script(src="/js/jquery.min.js")
-    script(src="/js/proyecto.js")
+      footer
+        p © Company 2015
+    // /container
+   

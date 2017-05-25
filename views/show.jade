@@ -1,0 +1,64 @@
+extends layout
+block content
+
+  container
+  .col-md-6.col-sm-6.col-md-offset-3.col-sm-offset-3
+    h3 Datos del proyecto #{docId}
+    |     
+    #bs-collapse.panel-group.wrap
+      .panel
+        .panel-heading
+          h4.panel-title
+            a(data-toggle="collapse", data-parent="#", href="#one")
+              | Cliente
+        |         
+        #one.panel-collapse.collapse.in
+          .panel-body
+             |Nombre:      #{nombre_cliente}
+             br
+             |Apellidos:   #{apellidos_cliente}
+      // end of panel
+      .panel
+        .panel-heading
+          h4.panel-title
+            a(data-toggle="collapse", data-parent="#", href="#two")
+              | Factura
+        |         
+        #two.panel-collapse.collapse.in
+          .panel-body
+             |ID:         #{id_factura}
+             br
+             |Pais:       #{pais_factura}
+             br
+             |Provincia:  #{provincia_factura}
+             br
+             |Municipio:  #{municipio_factura}
+             br
+             |Calle:      #{calle_factura}
+             br
+             |CP:         #{cp_factura}
+             br
+      // end of panel
+      .panel
+        .panel-heading
+          h4.panel-title
+            a(data-toggle="collapse", data-parent="#", href="#three")
+              | Collapse item #3
+        |         
+        #three.panel-collapse.collapse
+          .panel-body
+            | The days have gone down in the West behind the hills into shadow. Who shall gather the smoke of the deadwood burning, Or behold the flowing years from the Sea returning?
+      // end of panel
+      .panel
+        .panel-heading
+          h4.panel-title
+            a(data-toggle="collapse", data-parent="#", href="#four")
+              | Collapse item #4
+        |         
+        #four.panel-collapse.collapse.in
+          .panel-body
+            | They have passed like rain on the mountain, like a wind in the meadow; The days have gone down in the West behind the hills into shadow.
+      // end of panel
+    // end of #bs-collapse
+ 
+

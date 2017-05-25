@@ -30,6 +30,7 @@ exports.start = function(config)//Exporto la configuración desde proyecto.js
   var app = express();//Instancia al objeto de aplicación
   app.use(express.bodyParser());//Modulo de parseo de los archivos JSON
   app.use(express.static('static'));//(imagenes,css,javaScript,etc.) dentro de la carpeta static
+  //app.use(express.static(__dirname + '/static'));
   app.set('views', __dirname + '/views');//Especifico el directorio de las views de modo absoluto
   app.set('view engine', 'jade');//Especifico el motor que genera las views "jade"
   //app.locals Objeto que contiene propiedades de las variables locales dentro de la app
@@ -116,7 +117,7 @@ console.log("***********results*************");
         console.log("***********proyectos*************");
             console.log(proyectos);
           //Estoy pasando una variable local {'proyectos':proyectos}; a la view
-        res.render('proyecto/index', {'proyectos':proyectos});
+        res.render('index', {'proyectos':proyectos});
 
       })
     });
@@ -168,7 +169,7 @@ console.log("***********results*************");
         console.log(view.proyecto);
         console.log("*************view proyectofields********");
         console.log(view.proyectofields);
-        res.render('proyecto/show', view.proyecto);
+        res.render('show', view.proyecto);
     }
   });
   }

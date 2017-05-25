@@ -1,31 +1,104 @@
 extends ../layout
 block content
 
+  .container
+  .col-md-6.col-sm-6
+    h3 Default collapse with scaling icon
+    |     
+    #bs-collapse.panel-group.wrap
+      .panel
+        .panel-heading
+          h4.panel-title
+            a(data-toggle="collapse", data-parent="#", href="#one")
+              | Collapse item #1
+        |         
+        #one.panel-collapse.collapse
+          .panel-body
+             h3 Nombre:      #{nombre_cliente}
+             h3 Apellidos:   #{apellidos_cliente}
+      // end of panel
+      .panel
+        .panel-heading
+          h4.panel-title
+            a(data-toggle="collapse", data-parent="#", href="#two")
+              | Collapse item #2
+        |         
+        #two.panel-collapse.collapse
+          .panel-body
+             h3  ID:         #{id_factura}
+             h3  Pais:       #{pais_factura}
+             h3  Provincia:  #{provincia_factura}
+             h3  Municipio:  #{municipio_factura}
+             h3  Calle:      #{calle_factura}
+             h3  CP:         #{cp_factura}
+      // end of panel
+      .panel
+        .panel-heading
+          h4.panel-title
+            a(data-toggle="collapse", data-parent="#", href="#three")
+              | Collapse item #3
+        |         
+        #three.panel-collapse.collapse
+          .panel-body
+            | The days have gone down in the West behind the hills into shadow. Who shall gather the smoke of the deadwood burning, Or behold the flowing years from the Sea returning?
+      // end of panel
+      .panel
+        .panel-heading
+          h4.panel-title
+            a(data-toggle="collapse", data-parent="#", href="#four")
+              | Collapse item #4
+        |         
+        #four.panel-collapse.collapse.in
+          .panel-body
+            | They have passed like rain on the mountain, like a wind in the meadow; The days have gone down in the West behind the hills into shadow.
+      // end of panel
+    // end of #bs-collapse
+  |   
+  .col-md-6.col-sm-6
+    h3 Accordion collapse with rotating icon
+    |     
+    #accordion.panel-group.wrap(role="tablist", aria-multiselectable="true")
+      .panel
+        #headingOne.panel-heading(role="tab")
+          h4.panel-title
+            a(role="button", data-toggle="collapse", data-parent="#accordion", href="#collapseOne", aria-expanded="true", aria-controls="collapseOne")
+              | Collapsible item #1
+        |         
+        #collapseOne.panel-collapse.collapse.in(role="tabpanel", aria-labelledby="headingOne")
+          .panel-body
+            | Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch.
+      // end of panel
+      .panel
+        #headingTwo.panel-heading(role="tab")
+          h4.panel-title
+            a.collapsed(role="button", data-toggle="collapse", data-parent="#accordion", href="#collapseTwo", aria-expanded="false", aria-controls="collapseTwo")
+              | Collapsible item #2
+        |         
+        #collapseTwo.panel-collapse.collapse(role="tabpanel", aria-labelledby="headingTwo")
+          .panel-body
+            | Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch.
+      // end of panel
+      .panel
+        #headingThree.panel-heading(role="tab")
+          h4.panel-title
+            a.collapsed(role="button", data-toggle="collapse", data-parent="#accordion", href="#collapseThree", aria-expanded="false", aria-controls="collapseThree")
+              | Collapsible item #3
+        |         
+        #collapseThree.panel-collapse.collapse(role="tabpanel", aria-labelledby="headingThree")
+          .panel-body
+            | Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch.
+      // end of panel
+      .panel
+        #headingFour.panel-heading(role="tab")
+          h4.panel-title
+            a.collapsed(role="button", data-toggle="collapse", data-parent="#accordion", href="#collapseFour", aria-expanded="false", aria-controls="collapseFour")
+              | Collapsible item #4
+        |         
+        #collapseFour.panel-collapse.collapse(role="tabpanel", aria-labelledby="headingFour")
+          .panel-body
+            | Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch.
+      // end of panel
+    // end of #accordion
+  // end of wrap
+// end of container
 
- h3.muted  CLIENTE
-  hr
-  h3 Nombre:      #{nombre_cliente}
-  h3 Apellidos:   #{apellidos_cliente}
-  // h3  CIF cliente:#{nombre_cliente}
-  hr
-
-  h2.muted FACTURACIÓN
-  hr
-  h3  ID:         #{id_factura}
-  h3  Pais:       #{pais_factura}
-  h3  Provincia:  #{provincia_factura}
-  h3  Municipio:  #{municipio_factura}
-  h3  Calle:      #{calle_factura}
-  h3  CP:         #{cp_factura}
-  hr
-
-  h2.muted FICHA
-  hr
-  h3  Localización:            #{localizacion_ficha}
-  h3  Número participantes:    #{numeroParticipantes_ficha}
-  if (presenciaMenores_ficha)
-    h3  Presencia de menores:    Si
-  else
-    h3  Presencia de menores:    No
-  h3  Tipo de evento:          #{tipoEvento_ficha}
-  h3  Horario:                 #{horario_ficha}
