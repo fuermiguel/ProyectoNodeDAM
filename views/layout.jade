@@ -31,19 +31,136 @@ html.no-js(lang='')
 
     script(src='/js/main.js')
     script(src='/js/index.js')
-  body
-    //if lt IE 8
-      p.browserupgrade
-        | You are using an 
-        strong outdated
-        |  browser. Please 
-        a(href='http://browsehappy.com/') upgrade your browser
-        |  to improve your experience.
-  
-    block content
+body
+  //if lt IE 8
+    p.browserupgrade
+    | You are using an 
+    strong outdated
+    |  browser. Please 
+    a(href='http://browsehappy.com/') upgrade your browser
+    |  to improve your experience.
 
-      hr
-      footer
-        p © Company 2015
-    // /container
+  nav.navbar.navbar-inverse
+    .container-fluid
+      // Brand and toggle get grouped for better mobile display
+      .navbar-header
+        button.navbar-toggle.collapsed(type="button", data-toggle="collapse", data-target="#bs-example-navbar-collapse-1", aria-expanded="false")
+          span.sr-only Toggle navigation
+          |         
+          span.icon-bar
+          |         
+          span.icon-bar
+          |         
+          span.icon-bar
+          |       
+        a.navbar-brand(href="#")
+          <img alt="Brand" src="/img/marquitectura.PNG" class="img-responsive">
+      // Collect the nav links, forms, and other content for toggling
+      #bs-example-navbar-collapse-1.collapse.navbar-collapse
+        ul.nav.navbar-nav.navbar-right
+          li
+            a(href="/welcome") Inicio
+          |
+          li
+            a(href="/proyectos") Proyectos
+          |            
+          li.dropdown
+            a.dropdown-toggle(href="#", data-toggle="dropdown", role="button", aria-haspopup="true", aria-expanded="false")
+              | Configuración 
+              span.caret
+              |           
+            ul.dropdown-menu
+              li
+                a(href="#") Action
+              |             
+              li
+                a(href="#") Another action
+              |             
+              li
+                a(href="#") Something else here
+              |             
+              li.divider(role="separator")
+              |             
+              li
+                a(href="#") Separated link 
+  br
+  br
+  block content
+  .container
+    .row
+      .col-md-3.col-sm-6.footer-col
+        .logofooter  
+          <img alt="logo" src="/img/logo.png">
+        p
+          
+        p
+          i.fa.fa-map-pin
+          |  #1, Puerto del Rosario, Las Palmas, España
+        p
+          i.fa.fa-phone
+          |  Phone (España) : +34 xxxxxxxx
+        p
+          i.fa.fa-envelope
+          |  E-mail : Marquitectura@prabuuideveloper.com
+      .col-md-3.col-sm-6.footer-col
+        h6.heading7 GENERAL LINKS
+        ul.footer-ul
+          li
+            a(href='#')  Career
+          li
+            a(href='#')  Privacy Policy
+          li
+            a(href='#')  Terms & Conditions
+          li
+            a(href='#')  Client Gateway
+          li
+            a(href='#')  Ranking
+          li
+            a(href='#')  Case Studies
+          li
+            a(href='#')  Frequently Ask Questions
+      .col-md-3.col-sm-6.footer-col
+        h6.heading7 LATEST POST
+        .post
+          p
+            | facebook crack the movie advertisment code:what it means for you 
+            span August 3,2015
+          p
+            | facebook crack the movie advertisment code:what it means for you 
+            span August 3,2015
+          p
+            | facebook crack the movie advertisment code:what it means for you 
+            span August 3,2015
+      .col-md-3.col-sm-6.footer-col
+        h6.heading7 Social Media
+        ul.footer-social
+          li
+            i.fa.fa-linkedin.social-icon.linked-in(aria-hidden='true')
+          li
+            i.fa.fa-facebook.social-icon.facebook(aria-hidden='true')
+          li
+            i.fa.fa-twitter.social-icon.twitter(aria-hidden='true')
+          li
+            i.fa.fa-google-plus.social-icon.google(aria-hidden='true')
+// footer start from here
+  .copyright
+  .container
+    .col-md-6
+      p © 2016 - All Rights with prabuuideveloper
+    .col-md-6
+      ul.bottom_ul
+        li
+          a(href='#') prabuuideveloper.com
+        li
+          a(href='#') About us
+        li
+          a(href='#') Blog
+        li
+          a(href='#') Faq's
+        li
+          a(href='#') Contact us
+        li
+          a(href='#') Site Map
+
+    
    
