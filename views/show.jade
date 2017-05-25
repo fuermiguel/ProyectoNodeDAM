@@ -24,7 +24,7 @@ block content
             a(data-toggle="collapse", data-parent="#", href="#two")
               | Factura
         |         
-        #two.panel-collapse.collapse.in
+        #two.panel-collapse.collapse
           .panel-body
              |ID:         #{id_factura}
              br
@@ -43,21 +43,42 @@ block content
         .panel-heading
           h4.panel-title
             a(data-toggle="collapse", data-parent="#", href="#three")
-              | Collapse item #3
+              | Ficha
         |         
         #three.panel-collapse.collapse
           .panel-body
-            | The days have gone down in the West behind the hills into shadow. Who shall gather the smoke of the deadwood burning, Or behold the flowing years from the Sea returning?
+             |Localización:     #{localizacion_ficha}
+             br
+             |NºParticipantes:  #{numeroParticipantes_ficha}
+             br
+             if (presenciaMenores_ficha)
+                |Presencia de menores: Si
+              else
+                |Presencia de menores: No
+             br
+             |Tipo de evento:   #{tipoEvento_ficha}
+             br
+             |Horario:          #{horario_ficha}
+             
       // end of panel
       .panel
         .panel-heading
           h4.panel-title
             a(data-toggle="collapse", data-parent="#", href="#four")
-              | Collapse item #4
+              | Obra
         |         
-        #four.panel-collapse.collapse.in
+        #four.panel-collapse.collapse
           .panel-body
-            | They have passed like rain on the mountain, like a wind in the meadow; The days have gone down in the West behind the hills into shadow.
+             |Pais:       #{pais_obra}
+             br
+             |Provincia:  #{provincia_obra}
+             br
+             |Municipio:  #{municipio_obra}
+             br
+             |Calle:      #{calle_obra}
+             br
+             |CP:         #{cp_obra}
+             br
       // end of panel
     // end of #bs-collapse
  
